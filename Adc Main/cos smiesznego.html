@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Memuchy</title>
+        <script language="JavaScript">
+        
+        let topTextInput, bottomTextInput, topTextSizeInput, bottomTextSizeInput, imageInput, generateBtn, canvas, ctx;
+
+        function generateMeme (img, topText, bottomText, topTextSize, bottomTextSize) {
+            canvas.width = img.width;
+            canvas.height = img.height;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+                    ctx.fillStyle = 'white';
+                    ctx.strokeStyle = 'black';
+                    ctx.textAlign = 'center';
+
+            fontSize = canvas.width * topTextSize;
+            ctx.font = fontSize + 'px Impact';
+            ctx.lineWidth = fontSize / 20;
+            
+
+        }
+
+        </script>
+</head>
+    <body>
+        <p>
+            <textarea id="top-text"></textarea>
+            Text size: <input type="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+        </p>
+        <p>
+            <textarea id="bottom-text"></textarea>
+            Text size: <input type="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
+        </p>
+        <p>
+            <input type="file" id="image-input" accept="image/*">
+        </p>
+        <p>
+            <button id="generate-btn">Dawaj mema</button>
+        </p>
+</body>
+</html>
